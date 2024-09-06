@@ -12,7 +12,7 @@
 
 <div class="detail {{ expanded() ? 'expanded' : '' }}" [style.--expansion-timing]="EXPANSION_TIMING + 'ms'">
   <div class="overflow-hidden">
-    @if (lazyRender$ | async) {
+    @if (lazyRender()) {
       <app-user-detail [user]="user()" />
     }
   </div>

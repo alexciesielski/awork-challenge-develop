@@ -14,11 +14,11 @@
 </div>
 
 <div class="users">
-  @if (usersLoading$ | async) {
+  @if (usersLoading()) {
     <p>Loading…</p>
   } @else {
-    @if (allUsers$ | async; as allUsers) {
-      @if (groupedUsers$ | async; as groupedUsers) {
+    @if (allUsers(); as allUsers) {
+      @if (groupedUsers(); as groupedUsers) {
         @for (group of groupedUsers; track group.category) {
           <app-user-list [header]="group.category" [allUsers]="allUsers" [users]="group.users" />
         }
