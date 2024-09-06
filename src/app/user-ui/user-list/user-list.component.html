@@ -1,0 +1,11 @@
+<article class="user-list">
+  <h3>{{ header() }}</h3>
+
+  @if (allUsers(); as allUsers) {
+    @if (users(); as users) {
+      <cdk-virtual-scroll-viewport itemSize="60" [style]="'overflow-x: hidden;min-height: 240px'">
+        <app-user-item *cdkVirtualFor="let user of users" [user]="user" [allUsers]="allUsers" />
+      </cdk-virtual-scroll-viewport>
+    }
+  }
+</article>

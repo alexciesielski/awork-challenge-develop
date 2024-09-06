@@ -1,0 +1,28 @@
+<header>
+  <img src="logo.svg" alt="awork logo" />
+</header>
+
+<div class="user-search">
+  <input type="text" placeholder="Search for users" [formControl]="searchUsersCtrl" />
+  <div class="category-picker">
+    @for (category of categories; track category.id) {
+      <button (click)="setCategory(category.id)">
+        {{ category.label }}
+      </button>
+    }
+  </div>
+</div>
+
+<div class="users">
+  @if (usersLoading$ | async) {
+    <p>Loading…</p>
+  } @else {
+    @if (allUsers$ | async; as allUsers) {
+      @if (groupedUsers$ | async; as groupedUsers) {
+        @for (group of groupedUsers; track group.category) {
+          <app-user-list [header]="group.category" [allUsers]="allUsers" [users]="group.users" />
+        }
+      }
+    }
+  }
+</div>

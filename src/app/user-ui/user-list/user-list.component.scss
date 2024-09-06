@@ -1,0 +1,23 @@
+@import 'ease/ease-import.scss';
+
+:host {
+  display: flex;
+  flex: 1 1 auto;
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .user-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+    background-color: $color-white;
+    border-radius: 18px;
+    border: 6px solid $color-sky;
+    margin: 0 auto;
+    max-width: 60%;
+    padding: 12px;
+  }
+}

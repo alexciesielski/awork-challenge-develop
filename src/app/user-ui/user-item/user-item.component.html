@@ -1,0 +1,19 @@
+<div class="user-item">
+  <img class="user-item__image" [src]="imageSrc()" />
+
+  <p class="user-item__name">{{ user().firstname }} {{ user().lastname }}</p>
+
+  <p class="user-item__email">{{ user().email }}</p>
+
+  <p class="user-item__phone">{{ user().phone }}</p>
+
+  <p class="user-item__nat">{{ user().nat }} ({{ sameNationalitiesCount() }})</p>
+</div>
+
+<div class="detail {{ expanded() ? 'expanded' : '' }}" [style.--expansion-timing]="EXPANSION_TIMING + 'ms'">
+  <div class="overflow-hidden">
+    @if (lazyRender$ | async) {
+      <app-user-detail [user]="user()" />
+    }
+  </div>
+</div>
