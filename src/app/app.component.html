@@ -21,6 +21,8 @@
       @if (groupedUsers(); as groupedUsers) {
         @for (group of groupedUsers; track group.category) {
           <app-user-list [header]="group.category" [allUsers]="allUsers" [users]="group.users" />
+        } @empty {
+          <p>No users found.</p>
         }
       }
     }

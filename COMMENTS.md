@@ -28,7 +28,7 @@ So what you could say is I stick from the start with RXJS until the final output
 
   - `UserModel`: I changed all classes to interfaces as classes tend to be unintuitive, especially for newcomers to Typescript. I much prefer working with types and interfaces and leave class method logic to (state) services or in less usual cases just exported functions that get called from these services.
   - `UserHttpService`: I tend to encapsulate Http calls in their own services (suffixed with HttpService) and the only thing they do is just the HTTP call and nothing else. This comes in handy during unit testing later on.
-  - `UserService`: this is the service that glues together all different parts of the User domain. Some call it facade, some call it business logic service. It's the central place for the UserDomain and usually the only thing to be consumed by other domains. Often times alogn with the HTTP service I tend to also have a separate UserFormService that is responsible for all form related logic (validation, submission, etc.).
+  - `UserService`: this is the service that glues together all different parts of the User domain. Some call it facade, some call it business logic service. It's the central place for the UserDomain and usually the only thing to be consumed by other domains. Often times along with the HTTP service I tend to also have a separate UserFormService that is responsible for all form related logic (validation, submission, etc.).
     If the User domain is very large I will usually also create a UserState service that is responsible for managing local UI state of users.
     Since this project is quite simple I put the state logic directly into the facade service.
   - `ObservableWebWorker`: in previous projects I had to work quite extensively with WebWorkers as I was building a visualization dashboard, where the user could create their own dashboards and include charts inside it. To be able to do that we also had to do a lot of client-side processing which is when WebWorkers came in very handy.
@@ -37,6 +37,8 @@ So what you could say is I stick from the start with RXJS until the final output
 
 ## What's missing
 
+- The filtering logic could just as well be moved into a web worker
+- Pagination missing
 - Did not adjust anything about start/running the app, thus the README.md remains unchanged
 - ESLint should be added
 - Styling of the user-detail component
