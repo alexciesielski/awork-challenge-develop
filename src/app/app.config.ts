@@ -1,3 +1,4 @@
+import { APP_BASE_HREF } from '@angular/common';
 import { provideHttpClient } from '@angular/common/http';
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
@@ -16,5 +17,10 @@ export const appConfig: ApplicationConfig = {
     //   provide: UserHttpService,
     //   useClass: UserHttpMockService,
     // },
+
+    {
+      provide: APP_BASE_HREF,
+      useValue: '/awork-challenge-develop',
+    },
   ],
 };
