@@ -9,7 +9,9 @@
 
 What I tend to do with Signals is try and start capturing their benefit of the (promised) improved performance due to the change in ChangeDetection, which is supposed to be more performant when using Signals in templates, which is why you're not going to see the AsyncPipe in this project.
 
-So what you coul say is I stick from the start with RXJS until the final output to the template, which is when Signals with their future performance boost promises come in.
+So what you could say is I stick from the start with RXJS until the final output to the template, which is when Signals with their future performance boost promises come in.
+
+- Added prettier for autoformatting
 
 ## Code
 
@@ -35,5 +37,7 @@ So what you coul say is I stick from the start with RXJS until the final output 
 
 ## What's missing
 
+- Did not adjust anything about start/running the app, thus the README.md remains unchanged
+- ESLint should be added
 - Styling of the user-detail component
 - Unit tests for the user-list and user-ui component (although I am of the opinion that unit tests are for core logic, and business services, while components are much easier/better tested using Playwright or Storybook (well maybe with the exception of checking inputs and outputs), happy to elaborate on a call)
