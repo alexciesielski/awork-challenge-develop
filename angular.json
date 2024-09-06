@@ -37,7 +37,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/awork-challenge-develop",
+              "baseHref": "https://alexciesielski.github.io/awork-challenge-develop/",
               "budgets": [
                 {
                   "type": "initial",

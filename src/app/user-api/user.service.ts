@@ -42,7 +42,7 @@ export class UserService {
   readonly allUsers$ = this.allUsers$$.asObservable();
 
   private readonly loading$$ = new BehaviorSubject(false);
-  readonly loading$ = this.loading$$.asObservable();
+  readonly loading$ = this.loading$$.asObservable().pipe(map(() => true));
 
   private readonly groupBy$$ = new BehaviorSubject<UserGroupCategory | null>('nat');
   readonly groupBy$ = this.groupBy$$.asObservable();
